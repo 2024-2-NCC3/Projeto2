@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Azul_Escuro">#2C3E50</color>
+    <color name="Cinza_Claro">#ECF0F1</color>
+    <color name="Verde">#27AE60</color>
+    <color name="Vermelho">#E74C3C</color>
+    <color name="Roxo">#9B59B6</color>
+    <color name="Amarelo">#F1C40F</color>
+    <color name="Branco">#FFFFFF</color>
+    <color name="Preto">#000000</color>
+</resources>
