@@ -87,6 +87,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.115"
-        app:srcCompat="@drawable/logoRth" />
+        app:srcCompat="@drawable/logorth" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

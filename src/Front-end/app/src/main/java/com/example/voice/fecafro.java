@@ -58,7 +58,6 @@ public class fecafro extends AppCompatActivity {
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
-
         if (itemId == R.id.nav_home) {
             startActivity(new Intent(fecafro.this, MainActivity.class));
             return true;
