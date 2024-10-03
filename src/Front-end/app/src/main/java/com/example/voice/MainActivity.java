@@ -1,6 +1,7 @@
 package com.example.voice;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         SplashScreen.installSplashScreen(this);
 
-        Button fecafro = findViewById(R.id.btn_fecafro);
+            Button fecafro = findViewById(R.id.btn_fecafro);
         fecafro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,6 +35,29 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        Button ruthCardoso = findViewById(R.id.btn_ruth);
+        ruthCardoso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ruth_cardoso.class); // Ensure class name matches your activity
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        Button crpir = findViewById(R.id.btn_crpir);
+
+        crpir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=5511974318628"));
+                startActivity(intent);
+            }
+        });
+
+
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

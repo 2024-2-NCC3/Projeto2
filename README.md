@@ -8,7 +8,7 @@
 
 ## Nome do Grupo: The Boys
 
-## Integrantes: <a href="https://br.linkedin.com/in/s%C3%A1tiro-gabriel-27081430b">Sátiro Gabriel de Souza Santos</a>, <a href="https://www.linkedin.com/in/flaviojose-santos/">Flávio Jose dos Santos</a>, <a href="https://www.linkedin.com/in/wellington-oliveira-5b46a0191/">Wellington De Aguiar Oliveira</a>.<a>Marcelo Sousa</a>
+## Integrantes: <a href="https://br.linkedin.com/in/s%C3%A1tiro-gabriel-27081430b">Sátiro Gabriel de Souza Santos</a>, <a href="https://www.linkedin.com/in/flaviojose-santos/">Flávio Jose dos Santos</a>, <a href="https://www.linkedin.com/in/wellington-oliveira-5b46a0191/">Wellington De Aguiar Oliveira</a>,<a href="https://www.linkedin.com/in/marcelo-souza-36403b260/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Marcelo Henrique Sousa</a>
 
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Victor Rosetti</a>, <a href="https://www.linkedin.com/in/vheltai/">Vinicius Heltai</a>, <a href="https://www.linkedin.com/in/katia-bossi/"> Katia Milani Lara Bossi</a>.
 
@@ -32,4 +32,5 @@ O app contará com a colaboração de coletivos como Fecafro e Ruth Cardoso, for
 
 ## Referências
 
+ main
 - [Figma](https://www.figma.com/design/6ulN34TlcZpjF9bQde2QxN/Untitled?node-id=0-1&t=SfLDRvDMNlrHqicn-1).

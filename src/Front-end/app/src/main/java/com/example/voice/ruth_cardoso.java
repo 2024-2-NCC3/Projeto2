@@ -16,13 +16,18 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class fecafro extends AppCompatActivity {
+public class ruth_cardoso extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_fecafro);
+        setContentView(R.layout.activity_ruth_cardoso);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         Button whats = findViewById(R.id.btn_whats);
         whats.setOnClickListener(new View.OnClickListener() {
@@ -38,16 +43,10 @@ public class fecafro extends AppCompatActivity {
         insta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/Fecafro"));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/coletivo.ruthc/"));
                 startActivity(intent);
                 finish();
             }
-        });
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
         });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -58,14 +57,15 @@ public class fecafro extends AppCompatActivity {
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
+
         if (itemId == R.id.nav_home) {
-            startActivity(new Intent(fecafro.this, MainActivity.class));
+            startActivity(new Intent(ruth_cardoso.this, MainActivity.class));
             return true;
         } else if (itemId == R.id.nav_warning) {
-            startActivity(new Intent(fecafro.this, Complaint.class));
+            startActivity(new Intent(ruth_cardoso.this, Complaint.class));
             return true;
         } else if (itemId == R.id.nav_image) {
-            startActivity(new Intent(fecafro.this, Notice.class));
+            startActivity(new Intent(ruth_cardoso.this, Notice.class));
             return true;
         } else {
             return false;

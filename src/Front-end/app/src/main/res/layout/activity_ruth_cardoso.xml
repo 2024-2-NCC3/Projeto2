@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Cinza_Claro"
-    tools:context=".MainActivity">
+    android:background="#4C0273"
+    tools:context=".ruth_cardoso">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -15,11 +15,12 @@
         android:layout_gravity="center"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:background="@color/Cinza_Claro"
+        android:background="#161616"
         android:paddingTop="10dp"
+        app:backgroundTint="#4B0272"
         app:itemHorizontalTranslationEnabled="false"
-        app:itemIconTint="@color/Preto"
-        app:itemTextColor="@color/Preto"
+        app:itemIconTint="@color/Branco"
+        app:itemTextColor="@color/Branco"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -28,56 +29,64 @@
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    <Button
-        android:id="@+id/btn_fecafro"
-        android:layout_width="301dp"
-        android:layout_height="100dp"
-        android:backgroundTint="#000FAA75"
-        android:text="FECAFRO"
+
+    <TextView
+        android:id="@+id/txt_fecafro"
+        android:layout_width="380dp"
+        android:layout_height="151dp"
+        android:text="Aqui vai uma breve descrição do que é o coletivo e qual seu principal objetivo"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44" />
+        app:layout_constraintVertical_bias="0.805" />
 
     <Button
-        android:id="@+id/btn_ruth"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:backgroundTint="#000FAA75"
-        android:text="Ruth Cardoso"
+        android:id="@+id/btn_insta"
+        android:layout_width="45sp"
+        android:layout_height="45sp"
+        android:background="@drawable/icon_insta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.478" />
+
+    <Button
+        android:id="@+id/btn_news"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/icon_news"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.478" />
+
+    <Button
+        android:id="@+id/btn_whats"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="180dp"
+        android:background="@drawable/icon_whats"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.478" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.63" />
-
-    <Button
-        android:id="@+id/btn_crpir"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
-        android:background="@drawable/megaphone"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="S.O.S CRPIR"
-        android:textColor="@color/Preto"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.783" />
+        app:layout_constraintVertical_bias="0.115"
+        app:srcCompat="@drawable/logorth" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
