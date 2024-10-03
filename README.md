@@ -39,4 +39,3 @@ O app contará com a colaboração de coletivos como Fecafro e Ruth Cardoso, for
 ## Referências
 
 - [Figma](https://www.figma.com/design/6ulN34TlcZpjF9bQde2QxN/Untitled?node-id=0-1&t=SfLDRvDMNlrHqicn-1).
-- 
