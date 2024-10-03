@@ -14,12 +14,6 @@
 
 ## Descrição
 
-<p align="center">
-<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
-</p>
-
-
 A violência contra mulheres,  e as violências ético-raciais, é um problema alarmante que precisa ser abordado. A importância da denúncia e a visibilidade dessas questões sociais são fundamentais para promover mudanças significativas.
 
 Objetivo do App
