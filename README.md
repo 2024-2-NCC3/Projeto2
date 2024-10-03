@@ -8,7 +8,7 @@
 
 ## Nome do Grupo: The Boys
 
-## Integrantes: <a href="https://br.linkedin.com/in/s%C3%A1tiro-gabriel-27081430b">Sátiro Gabriel de Souza Santos</a>, <a href="https://www.linkedin.com/in/flaviojose-santos/">Flávio Jose dos Santos</a>, <a href="https://www.linkedin.com/in/wellington-oliveira-5b46a0191/">Wellington De Aguiar Oliveira</a>.<a>Marcelo Sousa</a>
+## Integrantes: <a href="https://br.linkedin.com/in/s%C3%A1tiro-gabriel-27081430b">Sátiro Gabriel de Souza Santos</a>, <a href="https://www.linkedin.com/in/flaviojose-santos/">Flávio Jose dos Santos</a>, <a href="https://www.linkedin.com/in/wellington-oliveira-5b46a0191/">Wellington De Aguiar Oliveira</a>,<a>Marcelo Henrique Sousa</a>
 
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Victor Rosetti</a>, <a href="https://www.linkedin.com/in/vheltai/">Vinicius Heltai</a>, <a href="https://www.linkedin.com/in/katia-bossi/"> Katia Milani Lara Bossi</a>.
 
