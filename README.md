@@ -6,11 +6,6 @@
 
 # Projeto Voice<p align="center">
 
-<p align="center">
-<a href="#"><img src="/mnt/data/Voice_App_Logo.png" alt="Voice - Aplicativo de Denúncia" border="0"></a>
-</p>
-
-
 
 ## Nome do Grupo: The Boys
 
