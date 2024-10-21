@@ -31,6 +31,9 @@ Parcerias e Apoio
 O app contará com a colaboração de coletivos como Fecafro e Ruth Cardoso, fortalecendo a rede de apoio e amplificando a eficácia das iniciativas propostas.
 
 ## Referências
+Uma das nossas referências veio do Centro de Referência de Promoção da Igualdade Racial (CRPIR). Que tenta fazer justamente esse papel de acolhimento e defesa das vítimas de violências étnico-raciais, pra além disso fornecem a Promoção da igualdade racial.
+Outras referências foram os coletivos Fecafro e Ruth Cardoso, que fazem esse papel de acolhimento dentro da faculdade, e nosso app vem pra ser um facilitador para as vítimas.
+
 
  main
 - [Figma](https://www.figma.com/design/6ulN34TlcZpjF9bQde2QxN/Untitled?node-id=0-1&t=SfLDRvDMNlrHqicn-1).
