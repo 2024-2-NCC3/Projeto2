@@ -5,7 +5,9 @@
 </p>
 
 # Projeto Voice<p align="center">
-<a href="#"><img src="URL_DA_LOGO_DO_VOICE" alt="Voice - Aplicativo de Denúncia" border="0"></a>
+
+<p align="center">
+<a href="#"><img src="/mnt/data/Voice_App_Logo.png" alt="Voice - Aplicativo de Denúncia" border="0"></a>
 </p>
 
 
