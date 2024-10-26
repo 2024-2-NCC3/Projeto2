@@ -1,7 +1,10 @@
 package com.example.voice;
 
+import static androidx.fragment.app.FragmentManager.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -29,6 +32,7 @@ public class Complaint extends AppCompatActivity {
     private Spinner dropdown;
     private EditText reportText;
     private Button sendButton;
+    private final int OFFSET = 20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,8 @@ public class Complaint extends AppCompatActivity {
         dropdown = findViewById(R.id.specificationSpinner);
         reportText = findViewById(R.id.reportEditText);
         sendButton = findViewById(R.id.sendButton);
+
+        System.out.println(cesarCipher("hello world", 20));
 
         String[] items = new String[]{"Racismo", "Homofobia", "Abuso Sexual", "Outros"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
@@ -55,6 +61,26 @@ public class Complaint extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
 
     }
+
+    private String cesarCipher(String text, int deslocamento){
+        StringBuilder encryptedText = new StringBuilder();
+        deslocamento = deslocamento % 26;
+
+        for (char c: text.toCharArray()) {
+            if (c >= 'A' && c <= 'Z') {
+                char newLetter = (char) ('A' + (c - 'A' + deslocamento + 26) % 26);
+                encryptedText.append(newLetter);
+            }
+            else if (c >= 'a' && c <= 'z') {
+                    char newLetter = (char) ('a' + (c - 'a' + deslocamento + 26) % 26);
+                    encryptedText.append(newLetter);
+            }
+            else {encryptedText.append(c);}
+        }
+
+        return encryptedText.toString();
+    }
+
 
 
 
@@ -95,7 +121,7 @@ public class Complaint extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(Complaint.this, "Enviado com sucesso", Toast.LENGTH_SHORT).show();
-
+                        System.out.println("funcionou");
                         reportText.setText("");
                     }
                 },
@@ -103,13 +129,14 @@ public class Complaint extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(Complaint.this, "Erro ao enviar", Toast.LENGTH_SHORT).show();
+                        System.out.println(error);
                     }
                 }) {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put("type", type);
-                params.put("report", report);
+                params.put("type", cesarCipher(type, OFFSET));
+                params.put("report", cesarCipher(report, OFFSET));
                 return params;
             }
         };
