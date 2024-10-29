@@ -2,6 +2,7 @@ package com.example.voice;
 
 import static androidx.fragment.app.FragmentManager.TAG;
 
+import java.time.LocalTime;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -32,12 +36,17 @@ public class Complaint extends AppCompatActivity {
     private Spinner dropdown;
     private EditText reportText;
     private Button sendButton;
-    private final int OFFSET = 20;
+
+
+    SimpleDateFormat sdf = new SimpleDateFormat("HH");
+    private final String actuallyHour = sdf.format(new Date());
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint);
+
 
         dropdown = findViewById(R.id.specificationSpinner);
         reportText = findViewById(R.id.reportEditText);
@@ -135,8 +144,8 @@ public class Complaint extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put("type", cesarCipher(type, OFFSET));
-                params.put("report", cesarCipher(report, OFFSET));
+                params.put("type", cesarCipher(type, Integer.parseInt(actuallyHour)));
+                params.put("report", cesarCipher(report, Integer.parseInt(actuallyHour)));
                 return params;
             }
         };
