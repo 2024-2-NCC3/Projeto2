@@ -81,7 +81,7 @@ public class Complaint extends AppCompatActivity {
     private void sendComplaint() {
         String type = dropdown.getSelectedItem().toString();
         String report = reportText.getText().toString();
-
+        System.out.println("passei aqui 1: " + type + " " + report);
         if (report.isEmpty()) {
             Toast.makeText(this, "Preencha os campos vazios", Toast.LENGTH_SHORT).show();
             return;
@@ -95,7 +95,7 @@ public class Complaint extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(Complaint.this, "Enviado com sucesso", Toast.LENGTH_SHORT).show();
-
+                        System.out.println("passei aqui 3: " + response);
                         reportText.setText("");
                     }
                 },
@@ -103,6 +103,7 @@ public class Complaint extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(Complaint.this, "Erro ao enviar", Toast.LENGTH_SHORT).show();
+                        System.out.println("passei aqui 2: " + error);
                     }
                 }) {
             @Override

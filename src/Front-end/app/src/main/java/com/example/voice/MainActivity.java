@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.graphics.drawable.GradientDrawable;
+
 
 import androidx.annotation.NonNull;
 import androidx.activity.EdgeToEdge;
@@ -15,18 +17,26 @@ import androidx.core.splashscreen.SplashScreen;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        SplashScreen.installSplashScreen(this);
 
-            Button fecafro = findViewById(R.id.btn_fecafro);
+
+         //Botões adicionados
+        Button denuncia = findViewById(R.id.button_warning);
+        denuncia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Complaint.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        Button fecafro = findViewById(R.id.btn_fecafro);
         fecafro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,14 +50,13 @@ public class MainActivity extends AppCompatActivity {
         ruthCardoso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ruth_cardoso.class); // Ensure class name matches your activity
+                Intent intent = new Intent(MainActivity.this, ruth_cardoso.class); // Certifique-se de que o nome da classe corresponde à sua activity
                 startActivity(intent);
                 finish();
             }
         });
 
         Button crpir = findViewById(R.id.btn_crpir);
-
         crpir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,35 +65,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
+    }
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
+    private void setRoundedButton(Button button) {
+        // Criando e configurando o GradientDrawable
+        GradientDrawable drawable = new GradientDrawable();
+        drawable.setCornerRadius(300f); // Raio dos cantos
+        button.setBackground(drawable);
     }
 
 
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int itemId = item.getItemId();
-
-        if (itemId == R.id.nav_home) {
-            startActivity(new Intent(MainActivity.this, MainActivity.class));
-            return true;
-        } else if (itemId == R.id.nav_warning) {
-            startActivity(new Intent(MainActivity.this, Complaint.class));
-            return true;
-        } else if (itemId == R.id.nav_image) {
-            startActivity(new Intent(MainActivity.this, Notice.class));
-            return true;
-        } else {
-            return false;
-        }
-    }
 }

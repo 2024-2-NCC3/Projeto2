@@ -1,5 +1,6 @@
 package com.example.voice;
 
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,7 +17,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ruth_cardoso extends AppCompatActivity {
+public class
+ruth_cardoso extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
