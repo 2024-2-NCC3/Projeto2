@@ -76,22 +76,38 @@ public class Complaint extends AppCompatActivity {
         OFFSET = OFFSET % 26;
 
 
-        // this shouldn't fail but if it fails we're fucked
+        // shouldn't fail but if it fails we're fucked
         if (OFFSET == 0) {
             OFFSET = 1;
         }
 
-        for (char c: text.toCharArray()) {
-            if (c >= 'A' && c <= 'Z') {
-                char newLetter = (char) ('A' + (c - 'A' + OFFSET + 26) % 26);
-                encryptedText.append(newLetter);
-            }
-            else if (c >= 'a' && c <= 'z') {
+        for (char c : text.toCharArray()) {
+
+            if (Character.isLetter(c)) {
+
+                if (c >= 'A' && c <= 'Z') {
+                    char newLetter = (char) ('A' + (c - 'A' + OFFSET + 26) % 26);
+                    encryptedText.append(newLetter);
+                }
+
+                else if (c >= 'a' && c <= 'z') {
                     char newLetter = (char) ('a' + (c - 'a' + OFFSET + 26) % 26);
                     encryptedText.append(newLetter);
+                }
+
+                else if (c >= 'À' && c <= 'ÿ') {
+                    int newCharCode = c + OFFSET;
+
+                    if (newCharCode > 'ÿ') {
+                        newCharCode = 'À' + (newCharCode - 'ÿ' - 1);
+                    }
+                    encryptedText.append((char) newCharCode);
+                }
+            } else {
+                encryptedText.append(c);
             }
-            else {encryptedText.append(c);}
         }
+
 
         return encryptedText.toString();
     }
