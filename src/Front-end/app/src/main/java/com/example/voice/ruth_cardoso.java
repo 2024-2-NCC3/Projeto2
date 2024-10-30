@@ -71,4 +71,5 @@ public class ruth_cardoso extends AppCompatActivity {
             return false;
         }
     }
+    Intent intent = new Intent(ruth_cardoso.this, fecafro.class);
 }
