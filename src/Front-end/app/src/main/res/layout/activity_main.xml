@@ -29,6 +29,7 @@
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <Button
+        app:circularflow_radiusInDP="20dp"
         android:id="@+id/btn_fecafro"
         android:layout_width="301dp"
         android:layout_height="100dp"

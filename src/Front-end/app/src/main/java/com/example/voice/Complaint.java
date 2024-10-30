@@ -71,17 +71,23 @@ public class Complaint extends AppCompatActivity {
 
     }
 
-    private String cesarCipher(String text, int deslocamento){
+    private String cesarCipher(String text, int OFFSET){
         StringBuilder encryptedText = new StringBuilder();
-        deslocamento = deslocamento % 26;
+        OFFSET = OFFSET % 26;
+
+
+        // this shouldn't fail but if it fails we're fucked
+        if (OFFSET == 0) {
+            OFFSET = 1;
+        }
 
         for (char c: text.toCharArray()) {
             if (c >= 'A' && c <= 'Z') {
-                char newLetter = (char) ('A' + (c - 'A' + deslocamento + 26) % 26);
+                char newLetter = (char) ('A' + (c - 'A' + OFFSET + 26) % 26);
                 encryptedText.append(newLetter);
             }
             else if (c >= 'a' && c <= 'z') {
-                    char newLetter = (char) ('a' + (c - 'a' + deslocamento + 26) % 26);
+                    char newLetter = (char) ('a' + (c - 'a' + OFFSET + 26) % 26);
                     encryptedText.append(newLetter);
             }
             else {encryptedText.append(c);}
