@@ -153,11 +153,11 @@ public class Complaint extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(Complaint.this, "Enviado com sucesso", Toast.LENGTH_SHORT).show();
-<<<<<<< HEAD:src/Front-end/app/src/main/java/br/fecap/pi/voice/Complaint.java
+
                         System.out.println("passei aqui 3: " + response);
-=======
+
                         System.out.println("funcionou");
->>>>>>> main:src/Front-end/app/src/main/java/com/example/voice/Complaint.java
+
                         reportText.setText("");
                     }
                 },
@@ -165,11 +165,11 @@ public class Complaint extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(Complaint.this, "Erro ao enviar", Toast.LENGTH_SHORT).show();
-<<<<<<< HEAD:src/Front-end/app/src/main/java/br/fecap/pi/voice/Complaint.java
+
                         System.out.println("passei aqui 2: " + error);
-=======
+
                         System.out.println(error);
->>>>>>> main:src/Front-end/app/src/main/java/com/example/voice/Complaint.java
+
                     }
                 }) {
             @Override
