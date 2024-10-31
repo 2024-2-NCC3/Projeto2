@@ -1,21 +1,19 @@
-package com.example.voice;
+package br.fecap.pi.voice;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.graphics.drawable.GradientDrawable;
 
 
-import androidx.annotation.NonNull;
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
-import androidx.core.splashscreen.SplashScreen;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import br.fecap.pi.voice.R;
 
 public class MainActivity extends AppCompatActivity {
 

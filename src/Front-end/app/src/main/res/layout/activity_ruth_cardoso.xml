@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4C0273"
-    tools:context=".ruth_cardoso">
+    tools:context="br.fecap.pi.voice.ruth_cardoso">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

@@ -18,19 +18,19 @@
             android:name=".test"
             android:exported="false" />
         <activity
-            android:name=".ruth_cardoso"
+            android:name="br.fecap.pi.voice.ruth_cardoso"
             android:exported="false" />
         <activity
-            android:name=".fecafro"
+            android:name="br.fecap.pi.voice.fecafro"
             android:exported="false" />
         <activity
-            android:name=".Notice"
+            android:name="br.fecap.pi.voice.Notice"
             android:exported="false" />
         <activity
-            android:name=".Complaint"
+            android:name="br.fecap.pi.voice.Complaint"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="br.fecap.pi.voice.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

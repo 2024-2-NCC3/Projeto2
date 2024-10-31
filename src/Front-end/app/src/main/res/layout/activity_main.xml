@@ -8,7 +8,7 @@
     android:background="#00FFFFFF"
     android:backgroundTint="#00FFFFFF"
     android:padding="20dp"
-    tools:context=".MainActivity">
+    tools:context="br.fecap.pi.voice.MainActivity">
 
     <Button
         android:id="@+id/button_warning"
