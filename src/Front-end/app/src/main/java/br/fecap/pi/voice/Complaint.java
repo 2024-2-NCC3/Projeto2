@@ -1,7 +1,11 @@
 package br.fecap.pi.voice;
 
+import static androidx.fragment.app.FragmentManager.TAG;
+
+import java.time.LocalTime;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -9,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,14 +38,22 @@ public class Complaint extends AppCompatActivity {
     private EditText reportText;
     private Button sendButton;
 
+
+    SimpleDateFormat sdf = new SimpleDateFormat("HH");
+    private final String actuallyHour = sdf.format(new Date());
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint);
 
+
         dropdown = findViewById(R.id.specificationSpinner);
         reportText = findViewById(R.id.reportEditText);
         sendButton = findViewById(R.id.sendButton);
+
+        System.out.println(cesarCipher("hello world", 20));
 
         String[] items = new String[]{"Racismo", "Homofobia", "Abuso Sexual", "Outros"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
@@ -56,6 +71,32 @@ public class Complaint extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
 
     }
+
+    private String cesarCipher(String text, int OFFSET){
+        StringBuilder encryptedText = new StringBuilder();
+        OFFSET = OFFSET % 26;
+
+
+        // this shouldn't fail but if it fails we're fucked
+        if (OFFSET == 0) {
+            OFFSET = 1;
+        }
+
+        for (char c: text.toCharArray()) {
+            if (c >= 'A' && c <= 'Z') {
+                char newLetter = (char) ('A' + (c - 'A' + OFFSET + 26) % 26);
+                encryptedText.append(newLetter);
+            }
+            else if (c >= 'a' && c <= 'z') {
+                    char newLetter = (char) ('a' + (c - 'a' + OFFSET + 26) % 26);
+                    encryptedText.append(newLetter);
+            }
+            else {encryptedText.append(c);}
+        }
+
+        return encryptedText.toString();
+    }
+
 
 
 
@@ -96,7 +137,11 @@ public class Complaint extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(Complaint.this, "Enviado com sucesso", Toast.LENGTH_SHORT).show();
+<<<<<<< HEAD:src/Front-end/app/src/main/java/br/fecap/pi/voice/Complaint.java
                         System.out.println("passei aqui 3: " + response);
+=======
+                        System.out.println("funcionou");
+>>>>>>> main:src/Front-end/app/src/main/java/com/example/voice/Complaint.java
                         reportText.setText("");
                     }
                 },
@@ -104,14 +149,18 @@ public class Complaint extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(Complaint.this, "Erro ao enviar", Toast.LENGTH_SHORT).show();
+<<<<<<< HEAD:src/Front-end/app/src/main/java/br/fecap/pi/voice/Complaint.java
                         System.out.println("passei aqui 2: " + error);
+=======
+                        System.out.println(error);
+>>>>>>> main:src/Front-end/app/src/main/java/com/example/voice/Complaint.java
                     }
                 }) {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put("type", type);
-                params.put("report", report);
+                params.put("type", cesarCipher(type, Integer.parseInt(actuallyHour)));
+                params.put("report", cesarCipher(report, Integer.parseInt(actuallyHour)));
                 return params;
             }
         };
