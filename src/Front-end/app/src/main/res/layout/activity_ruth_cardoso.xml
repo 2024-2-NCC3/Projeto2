@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4C0273"
-    tools:context=".ruth_cardoso">
+    tools:context="br.fecap.pi.voice.ruth_cardoso">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -31,16 +31,18 @@
 
 
     <TextView
-        android:id="@+id/txt_fecafro"
+        android:id="@+id/txt_ruth"
         android:layout_width="380dp"
-        android:layout_height="151dp"
-        android:text="Aqui vai uma breve descrição do que é o coletivo e qual seu principal objetivo"
+        android:layout_height="250dp"
+        android:text="O Coletivo Ruth Cardoso é um grupo de pesquisa e ação social que se dedica a discutir e promover a justiça social e a cidadania. Com uma abordagem interdisciplinar, o coletivo busca unir acadêmicos, ativistas e a comunidade para abordar questões como desigualdade, direitos humanos e políticas públicas. O nome homenageia Ruth Cardoso, uma importante antropóloga e primeira-dama do Brasil, reconhecida por seu trabalho em inclusão social e desenvolvimento sustentável. O coletivo realiza eventos, oficinas e projetos que visam empoderar grupos marginalizados e fomentar uma sociedade mais equitativa."
         android:textColor="#FFFFFF"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.805" />
+        app:layout_constraintVertical_bias="0.833" />
 
     <Button
         android:id="@+id/btn_insta"
@@ -78,15 +80,16 @@
         app:layout_constraintVertical_bias="0.478" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
+        android:id="@+id/banner_ruth"
+        android:layout_width="279dp"
+        android:layout_height="260dp"
+        android:cropToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115"
-        app:srcCompat="@drawable/logorth" />
+        app:srcCompat="@drawable/banner_ruth_cardoso"
+        app:layout_constraintVertical_bias="0.115"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

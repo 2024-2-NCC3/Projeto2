@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.voice'
+    namespace 'br.fecap.pi.voice'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.voice"
+        applicationId "br.fecap.pi.voice"
         minSdk 24
         targetSdk 34
         versionCode 1
