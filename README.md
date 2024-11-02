@@ -6,11 +6,9 @@
 
 # Projeto Voice<p align="center">
 
-<p align="center">
-    <a href="https://www.fecap.br/">
-        <img src="https://i.imgur.com/NOME_DA_IMAGEM.jpg" alt="VOICE" border="0">
-    </a>
-</p>
+<div>
+    <img src="Documentos\Entrega 3\Imagens\Logo_Icon\icone_app.jpeg" width="128" height="128"/>
+</div>
 
 
 
