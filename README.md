@@ -6,6 +6,11 @@
 
 # Projeto Voice<p align="center">
 
+<div>
+    <img src="Documentos\Entrega 3\Imagens\Logo_Icon\icone_app.jpeg" width="128" height="128"/>
+</div>
+
+
 
 ## Nome do Grupo: The Boys
 
@@ -31,10 +36,21 @@ Funcionalidades do App
 Parcerias e Apoio
 O app contará com a colaboração de coletivos como Fecafro e Ruth Cardoso, fortalecendo a rede de apoio e amplificando a eficácia das iniciativas propostas.
 
-## Referências
-Uma das nossas referências veio do Centro de Referência de Promoção da Igualdade Racial (CRPIR). Que tenta fazer justamente esse papel de acolhimento e defesa das vítimas de violências étnico-raciais, pra além disso fornecem a Promoção da igualdade racial.
-Outras referências foram os coletivos Fecafro e Ruth Cardoso, que fazem esse papel de acolhimento dentro da faculdade, e nosso app vem pra ser um facilitador para as vítimas.
-
-
  main
 - [Figma](https://www.figma.com/design/6ulN34TlcZpjF9bQde2QxN/Untitled?node-id=0-1&t=SfLDRvDMNlrHqicn-1).
+- 
+## Referências
+Uma das principais referências para o nosso projeto foi o **Centro de Referência de Promoção da Igualdade Racial (CRPIR)**, que desempenha um papel fundamental no acolhimento e na defesa das vítimas de violências étnico-raciais, além de promover ativamente a igualdade racial. Também buscamos inspiração nos coletivos **Fecafro** e **Ruth Cardoso**, que realizam esse trabalho de acolhimento dentro da faculdade. Nosso aplicativo foi desenvolvido com o intuito de ser uma ferramenta facilitadora para as vítimas, permitindo que elas façam denúncias de forma prática e segura.
+
+Para entender melhor o impacto desse tipo de violência na vida das vítimas, assistimos a vídeos que mostravam relatos reais e abordavam as consequências emocionais e sociais. Esses materiais foram essenciais para aprofundarmos nossa compreensão sobre a importância de fornecer um suporte adequado e acessível, que é o objetivo central do nosso app.
+
+📋 Licença/License
+🎓 Referências
+Aqui estão as referências usadas no projeto.
+- https://capital.sp.gov.br/web/direitos_humanos/w/igualdade_racial/rede_de_atendimento/270197
+- https://www.instagram.com/coletivo.ruthc/
+- https://www.instagram.com/fecafro/
+- https://youtu.be/W6HmH8VFWsM?si=5GieeeDFE2JsqoaL
+- https://youtu.be/7Af_xtOCN0w?si=7JJoQmbXwrv2hNsu
+
+

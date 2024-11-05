@@ -15,22 +15,19 @@
         android:theme="@style/Theme.AppCompat.Light"
         tools:targetApi="31">
         <activity
-            android:name=".test"
+            android:name=".ruth_cardoso"
             android:exported="false" />
         <activity
-            android:name="br.fecap.pi.voice.ruth_cardoso"
+            android:name=".fecafro"
             android:exported="false" />
         <activity
-            android:name="br.fecap.pi.voice.fecafro"
+            android:name=".Notice"
             android:exported="false" />
         <activity
-            android:name="br.fecap.pi.voice.Notice"
+            android:name=".Complaint"
             android:exported="false" />
         <activity
-            android:name="br.fecap.pi.voice.Complaint"
-            android:exported="false" />
-        <activity
-            android:name="br.fecap.pi.voice.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
