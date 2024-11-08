@@ -4,11 +4,11 @@
 <a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
 </p>
 
-# Projeto Voice<p align="center">
+# Projeto Voice
 
-<div>
-    <img src="Documentos\Entrega 3\Imagens\Logo_Icon\icone_app.jpeg" width="128" height="128"/>
-</div>
+<p align="center">
+   <a> <img src="Documentos\Entrega 3\Imagens\Logo_Icon\logo.png" alt="VOICE"/></a>
+</p>
 
 
 
