@@ -1,4 +1,4 @@
-package br.fecap.pi.voice;
+package br.fecap.pi.voice.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         fecafro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, fecafro.class);
+                Intent intent = new Intent(MainActivity.this, br.fecap.pi.voice.activity.fecafro.class);
                 startActivity(intent);
                 finish();
             }

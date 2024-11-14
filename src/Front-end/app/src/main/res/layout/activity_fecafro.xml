@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,85 +7,85 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#161616"
-    tools:context="br.fecap.pi.voice.fecafro">
+    tools:context="br.fecap.pi.voice.activity.fecafro">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="4dp"
-        android:background="#161616"
-        android:paddingTop="10dp"
-        app:itemHorizontalTranslationEnabled="false"
-        app:itemIconTint="@color/Branco"
-        app:itemTextColor="@color/Branco"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu">
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        <ImageView
+            android:src="@drawable/banner_fecafro"
+            android:layout_width="305dp"
+            android:layout_height="336dp" />
 
-    <ImageView
-        android:id="@+id/banner_fecafro"
-        android:layout_width="305dp"
-        android:layout_height="336dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04"
-        app:srcCompat="@drawable/banner_fecafro" />
+        <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_news"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/icon_news"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.855"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
 
-    <Button
-        android:id="@+id/btn_whats"
-        android:layout_width="45sp"
-        android:layout_height="45sp"
-        android:background="@drawable/icon_whats"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551" />
+            <Button
+                android:id="@+id/btn_news"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/icon_news" />
 
-    <Button
-        android:id="@+id/btn_insta"
-        android:layout_width="45sp"
-        android:layout_height="45sp"
-        android:background="@drawable/icon_insta"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
 
-    <TextView
-        android:id="@+id/tex_descricao"
-        android:layout_width="380dp"
-        android:layout_height="230dp"
-        android:text="TextView"
-        android:textColor="@color/Branco"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+            <Button
+                android:id="@+id/btn_whats"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/icon_whats" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_insta"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/icon_insta" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_descricao"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:text="O Coletivo negro Maria Leal - FECAFRO surgiu em 2018 com o propósito de promover um ambiente seguro e confortável para a comunidade negra da FECAP. Após 5 anos de muito trabalho, nosso maiorobjetivo é ser o coletivo piomeiro em interseccionalidade para expandir os horizontes para além dos limites da universidade."
+            android:textColor="#FFFFFF"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.833" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/newsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

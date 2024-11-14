@@ -7,18 +7,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5"
-    tools:context="br.fecap.pi.voice.MainActivity">
+    tools:context="br.fecap.pi.voice.activity.MainActivity">
 
     <!-- Imagem de Fundo Transparente -->
-    <ImageView
-        android:id="@+id/image_fundo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:alpha="0.2"
-        app:srcCompat="@drawable/fecap" />
 
     <!-- Logo Centralizado no Topo -->
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="100dp"
@@ -45,63 +39,83 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Botão de Nova Denúncia -->
+
+    <!-- Linha de Botões de Suporte -->
+
     <Button
         android:id="@+id/button_warning"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="288dp"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#FF6F61"
         android:text="Nova Denúncia"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#FF6F61"
-        android:background="@drawable/button_border"
-        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Linha de Botões de Suporte -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/button_warning">
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/button_warning"
+        tools:layout_editor_absoluteX="0dp">
 
         <!-- Botão Ruth Cardoso -->
+
+        <!-- Botão CRPIR -->
         <Button
             android:id="@+id/btn_ruth"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_weight="1"
             android:layout_margin="6dp"
-            android:text="Ruth Cardoso"
-            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            android:background="@drawable/button_border"
             android:backgroundTint="#4A90E2"
-            android:background="@drawable/button_border" />
+            android:text="Ruth Cardoso"
+            android:textColor="#FFFFFF" />
 
-        <!-- Botão CRPIR -->
+        <!-- Botão FECAFRO -->
         <Button
             android:id="@+id/btn_crpir"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_weight="1"
             android:layout_margin="6dp"
-            android:text="S.O.S CRPIR"
-            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            android:background="@drawable/button_border"
             android:backgroundTint="#7B1FA2"
-            android:background="@drawable/button_border" />
+            android:text="S.O.S CRPIR"
+            android:textColor="#FFFFFF" />
 
-        <!-- Botão FECAFRO -->
         <Button
             android:id="@+id/btn_fecafro"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_weight="1"
             android:layout_margin="6dp"
-            android:text="FECAFRO"
-            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            android:background="@drawable/button_border"
             android:backgroundTint="#333333"
-            android:background="@drawable/button_border" />
+            android:text="FECAFRO"
+            android:textColor="#FFFFFF" />
+
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/image_fundo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:alpha="0.2"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.962"
+        app:srcCompat="@drawable/fecap" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

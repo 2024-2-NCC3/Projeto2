@@ -1,11 +1,7 @@
-package br.fecap.pi.voice;
+package br.fecap.pi.voice.activity;
 
-import static androidx.fragment.app.FragmentManager.TAG;
-
-import java.time.LocalTime;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -13,9 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -23,15 +19,14 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
-import br.fecap.pi.voice.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import br.fecap.pi.voice.R;
 
 public class Complaint extends AppCompatActivity {
 
@@ -127,9 +122,6 @@ public class Complaint extends AppCompatActivity {
             return true;
         } else if (itemId == R.id.nav_warning) {
             startActivity(new Intent(Complaint.this, Complaint.class));
-            return true;
-        } else if (itemId == R.id.nav_image) {
-            startActivity(new Intent(Complaint.this, Notice.class));
             return true;
         } else {
             return false;

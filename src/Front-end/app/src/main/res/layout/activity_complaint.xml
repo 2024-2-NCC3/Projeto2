@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/Cinza_Claro"
     android:id="@+id/main"
-    tools:context="br.fecap.pi.voice.Complaint">
+    tools:context="br.fecap.pi.voice.activity.Complaint">
 
 
     <TextView
