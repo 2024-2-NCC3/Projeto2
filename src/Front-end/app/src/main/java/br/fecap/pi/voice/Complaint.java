@@ -1,7 +1,16 @@
 package br.fecap.pi.voice;
 
+
 import android.content.Intent;
 import android.os.Bundle;
+
+import static androidx.fragment.app.FragmentManager.TAG;
+
+import java.time.LocalTime;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -19,6 +28,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
 import br.fecap.pi.voice.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -136,6 +146,9 @@ public class Complaint extends AppCompatActivity {
         String type = dropdown.getSelectedItem().toString();
         String report = reportText.getText().toString();
 
+
+
+        System.out.println("passei aqui 1: " + type + " " + report);
         if (report.isEmpty()) {
             Toast.makeText(this, "Preencha os campos vazios", Toast.LENGTH_SHORT).show();
             return;
@@ -149,7 +162,14 @@ public class Complaint extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(Complaint.this, "Enviado com sucesso", Toast.LENGTH_SHORT).show();
+
                         System.out.println("funcionou");
+                      
+                        System.out.println("passei aqui 3: " + response);
+
+                        System.out.println("funcionou");
+
+
                         reportText.setText("");
                     }
                 },
@@ -157,7 +177,14 @@ public class Complaint extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(Complaint.this, "Erro ao enviar", Toast.LENGTH_SHORT).show();
+
                         System.out.println(error);
+
+
+                        System.out.println("passei aqui 2: " + error);
+
+                        System.out.println(error);
+
                     }
                 }) {
             @Override
