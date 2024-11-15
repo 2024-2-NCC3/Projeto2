@@ -19,8 +19,15 @@ import androidx.core.view.WindowInsetsCompat;
 import br.fecap.pi.voice.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+public class ruth_cardoso extends AppCompatActivity {
+
+
+import br.fecap.pi.voice.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class
 ruth_cardoso extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,4 +83,5 @@ ruth_cardoso extends AppCompatActivity {
         }
     }
     Intent intent = new Intent(ruth_cardoso.this, fecafro.class);
+
 }
