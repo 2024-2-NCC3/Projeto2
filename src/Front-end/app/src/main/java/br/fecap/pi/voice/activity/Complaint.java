@@ -1,11 +1,7 @@
-package br.fecap.pi.voice;
+package br.fecap.pi.voice.activity;
 
-import static androidx.fragment.app.FragmentManager.TAG;
-
-import java.time.LocalTime;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -13,9 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -23,21 +19,23 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
-import br.fecap.pi.voice.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import br.fecap.pi.voice.R;
 
 public class Complaint extends AppCompatActivity {
 
     private Spinner dropdown;
     private EditText reportText;
     private Button sendButton;
+    private Button mainButton, complaintButton, fecafroButton;
+    private boolean isFabOpen = false;
 
 
     SimpleDateFormat sdf = new SimpleDateFormat("HH");
@@ -49,8 +47,11 @@ public class Complaint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide(); // Remove a ActionBar
+        }
 
-        dropdown = findViewById(R.id.specificationSpinner);
+            dropdown = findViewById(R.id.specificationSpinner);
         reportText = findViewById(R.id.reportEditText);
         sendButton = findViewById(R.id.sendButton);
 
@@ -67,11 +68,62 @@ public class Complaint extends AppCompatActivity {
             }
         });
 
+        // Configurar o FloatingActionButton e os botões adicionais
+        FloatingActionButton fab = findViewById(R.id.floating_button);
+        mainButton = findViewById(R.id.main_button);
+        complaintButton = findViewById(R.id.denuncia_button);
+        fecafroButton = findViewById(R.id.ruth_button);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
+        // Ocultar os botões inicialmente
+        mainButton.setVisibility(View.GONE);
+        complaintButton.setVisibility(View.GONE);
+        fecafroButton.setVisibility(View.GONE);
 
+        // Configurar o clique no FAB para mostrar/ocultar os botões
+        fab.setOnClickListener(view -> {
+            if (isFabOpen) {
+                closeFabMenu();
+            } else {
+                openFabMenu();
+            }
+        });
+
+        // Configurar os cliques nos botões para navegar para as atividades apropriadas
+        mainButton.setOnClickListener(view -> {
+            startActivity(new Intent(Complaint.this, MainActivity.class));
+        });
+
+        complaintButton.setOnClickListener(view -> {
+            startActivity(new Intent(Complaint.this, Complaint.class));
+        });
+
+        fecafroButton.setOnClickListener(view -> {
+            startActivity(new Intent(Complaint.this, ruth_cardoso.class));
+        });
     }
+
+    // Método para abrir o menu de botões com espaçamento ajustado
+    private void openFabMenu() {
+        mainButton.setVisibility(View.VISIBLE);
+        complaintButton.setVisibility(View.VISIBLE);
+        fecafroButton.setVisibility(View.VISIBLE);
+
+        // Ajuste o espaçamento vertical dos botões
+        mainButton.setTranslationY(-350f); // Distância maior
+        complaintButton.setTranslationY(-250f); // Distância intermediária
+        fecafroButton.setTranslationY(-150f); // Distância menor
+
+        isFabOpen = true;
+    }
+
+    // Método para fechar o menu de botões
+    private void closeFabMenu() {
+        mainButton.setVisibility(View.GONE);
+        complaintButton.setVisibility(View.GONE);
+        fecafroButton.setVisibility(View.GONE);
+        isFabOpen = false;
+    }
+
 
     private String cesarCipher(String text, int OFFSET){
         StringBuilder encryptedText = new StringBuilder();
@@ -112,28 +164,6 @@ public class Complaint extends AppCompatActivity {
 
 
         return encryptedText.toString();
-    }
-
-
-
-
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-        // this shit is very stupid but it works well
-
-        int itemId = item.getItemId();
-        if (itemId == R.id.nav_home) {
-            startActivity(new Intent(Complaint.this, MainActivity.class));
-            return true;
-        } else if (itemId == R.id.nav_warning) {
-            startActivity(new Intent(Complaint.this, Complaint.class));
-            return true;
-        } else if (itemId == R.id.nav_image) {
-            startActivity(new Intent(Complaint.this, Notice.class));
-            return true;
-        } else {
-            return false;
-        }
     }
 
 

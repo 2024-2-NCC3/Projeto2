@@ -1,95 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4C0273"
-    tools:context="br.fecap.pi.voice.ruth_cardoso">
+    tools:context="br.fecap.pi.voice.activity.fecafro">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <!-- NestedScrollView com o conteúdo da tela -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/ruth_cardoso"
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:src="@drawable/banner_ruth_cardoso"
+                android:layout_width="250dp"
+                android:layout_height="250dp" />
+
+            <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/btn_whats"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/icon_whats" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/btn_insta"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/icon_insta" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/txt_descricao"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="O Coletivo Ruth Cardoso é um grupo de pesquisa e ação social que se dedica a discutir e promover a justiça social e a cidadania. Com uma abordagem interdisciplinar, o coletivo busca unir acadêmicos, ativistas e a comunidade para abordar questões como desigualdade, direitos humanos e políticas públicas. O nome homenageia Ruth Cardoso, uma importante antropóloga e primeira-dama do Brasil, reconhecida por seu trabalho em inclusão social e desenvolvimento sustentável. O coletivo realiza eventos, oficinas e projetos que visam empoderar grupos marginalizados e fomentar uma sociedade mais equitativa."
+                android:textColor="#FFFFFF"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.833" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/newsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- FloatingActionButton -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="#161616"
-        android:paddingTop="10dp"
-        app:backgroundTint="#4B0272"
-        app:itemHorizontalTranslationEnabled="false"
-        app:itemIconTint="@color/Branco"
-        app:itemTextColor="@color/Branco"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu">
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="Navegar"
+        android:src="@drawable/list_icon" />
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-
-    <TextView
-        android:id="@+id/txt_ruth"
-        android:layout_width="380dp"
-        android:layout_height="250dp"
-        android:text="O Coletivo Ruth Cardoso é um grupo de pesquisa e ação social que se dedica a discutir e promover a justiça social e a cidadania. Com uma abordagem interdisciplinar, o coletivo busca unir acadêmicos, ativistas e a comunidade para abordar questões como desigualdade, direitos humanos e políticas públicas. O nome homenageia Ruth Cardoso, uma importante antropóloga e primeira-dama do Brasil, reconhecida por seu trabalho em inclusão social e desenvolvimento sustentável. O coletivo realiza eventos, oficinas e projetos que visam empoderar grupos marginalizados e fomentar uma sociedade mais equitativa."
-        android:textColor="#FFFFFF"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833" />
+    <!-- Botões de navegação que aparecem ao clicar no FAB -->
+    <Button
+        android:id="@+id/main_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="120dp"
+        android:visibility="gone" />
 
     <Button
-        android:id="@+id/btn_insta"
-        android:layout_width="45sp"
-        android:layout_height="45sp"
-        android:background="@drawable/icon_insta"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.478" />
+        android:id="@+id/complaint_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Denúncia"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="80dp"
+        android:visibility="gone" />
 
     <Button
-        android:id="@+id/btn_news"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/icon_news"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.478" />
+        android:id="@+id/fecafro_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Preto"
+        android:text="Fecafro"
+        android:textColor="@color/Branco"
+        android:textStyle="bold"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="40dp"
+        android:visibility="gone" />
 
-    <Button
-        android:id="@+id/btn_whats"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="180dp"
-        android:background="@drawable/icon_whats"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.478" />
-
-    <ImageView
-        android:id="@+id/banner_ruth"
-        android:layout_width="279dp"
-        android:layout_height="260dp"
-        android:cropToPadding="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/banner_ruth_cardoso"
-        app:layout_constraintVertical_bias="0.115"/>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
