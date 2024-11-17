@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         SplashScreen.installSplashScreen(this);
 
-        Button fecafro = findViewById(R.id.btn_fecafro);
+
 
         setContentView(R.layout.activity_main);
 
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button fecafro = findViewById(R.id.btn_fecafro);
         fecafro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
