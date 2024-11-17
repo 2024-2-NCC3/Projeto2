@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Background"
-    tools:context="br.fecap.pi.voice.MainActivity">
+    tools:context="br.fecap.pi.voice">
 
     <!-- Logo Central -->
     <ImageView
@@ -58,18 +58,19 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <!-- Botão Ruth Cardoso -->
+
+        <!-- Botão CRPIR -->
         <Button
             android:id="@+id/btn_ruth"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_border"
             android:backgroundTint="#4C0273"
             android:text="Ruth Cardoso"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/button_border" />
+            android:textColor="#FFFFFF" />
 
-        <!-- Botão CRPIR -->
         <Button
             android:id="@+id/btn_crpir"
             android:layout_width="0dp"
@@ -82,6 +83,7 @@
             android:background="@drawable/button_border" />
 
         <!-- Botão FECAFRO -->
+
         <Button
             android:id="@+id/btn_fecafro"
             android:layout_width="0dp"
@@ -104,4 +106,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/fecap" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

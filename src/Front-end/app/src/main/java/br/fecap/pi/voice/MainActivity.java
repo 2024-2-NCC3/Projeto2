@@ -3,27 +3,38 @@ package br.fecap.pi.voice;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.Button;
-import android.graphics.drawable.GradientDrawable;
 
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
+import androidx.core.splashscreen.SplashScreen;
+
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import br.fecap.pi.voice.R;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        SplashScreen.installSplashScreen(this);
+
+        Button fecafro = findViewById(R.id.btn_fecafro);
+
         setContentView(R.layout.activity_main);
 
 
-         //Botões adicionados
+        //Botões adicionados
         Button denuncia = findViewById(R.id.button_warning);
         denuncia.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button fecafro = findViewById(R.id.btn_fecafro);
         fecafro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
         ruthCardoso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ruth_cardoso.class); // Certifique-se de que o nome da classe corresponde à sua activity
+
+                Intent intent = new Intent(MainActivity.this, ruth_cardoso.class);
                 startActivity(intent);
                 finish();
             }
@@ -63,20 +74,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-    }
 
-    private void setRoundedButton(Button button) {
-        // Criando e configurando o GradientDrawable
-        GradientDrawable drawable = new GradientDrawable();
-        drawable.setCornerRadius(300f); // Raio dos cantos
-        button.setBackground(drawable);
     }
-
 
 }
