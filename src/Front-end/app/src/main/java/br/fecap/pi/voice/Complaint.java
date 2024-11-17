@@ -35,7 +35,6 @@ public class Complaint extends AppCompatActivity {
 
     SimpleDateFormat sdf = new SimpleDateFormat("HH");
     private final String actuallyHour = sdf.format(new Date());
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
