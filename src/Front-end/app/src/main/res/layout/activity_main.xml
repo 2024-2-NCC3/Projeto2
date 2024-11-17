@@ -5,11 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF3E0"
-    android:padding="20dp"
+    android:background="@color/Background"
     tools:context="br.fecap.pi.voice.MainActivity">
 
-    <!-- Central logo at the top -->
+    <!-- Logo Central -->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="85dp"
@@ -17,42 +16,38 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.1"
         app:srcCompat="@drawable/logo" />
 
-    <!-- Central informative text -->
+    <!-- Texto Informativo -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="O VOICE é um aplicativo para denúncias de preconceitos, como racismo e discriminação de gênero, que garante o anonimato dos usuários sem necessidade de cadastro."
-        android:textColor="@color/Preto"
+        android:textColor="#4B4B4B"
         android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.2"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Denúncia button -->
+    <!-- Botão de Denúncia -->
     <Button
         android:id="@+id/button_warning"
         android:layout_width="160dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
+        android:backgroundTint="#1E88E5"
         android:text="Nova Denúncia"
         android:textColor="#FFFFFF"
+        android:background="@drawable/button_border"
         app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:background="@drawable/button_border"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Row of support buttons -->
+    <!-- Linha de Botões de Apoio -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -60,55 +55,53 @@
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/button_warning"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Ruth Cardoso button -->
+        <!-- Botão Ruth Cardoso -->
         <Button
             android:id="@+id/btn_ruth"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="5dp"
             android:backgroundTint="#4C0273"
             android:text="Ruth Cardoso"
             android:textColor="#FFFFFF"
-            android:background="@drawable/button_border"/>
+            android:background="@drawable/button_border" />
 
-        <!-- CRPIR button -->
+        <!-- Botão CRPIR -->
         <Button
             android:id="@+id/btn_crpir"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="5dp"
-            android:backgroundTint="@color/Vermelho"
+            android:backgroundTint="#D32F2F"
             android:text="S.O.S CRPIR"
             android:textColor="#FFFFFF"
-            android:background="@drawable/button_border"/>
+            android:background="@drawable/button_border" />
 
-        <!-- FECAFRO button -->
+        <!-- Botão FECAFRO -->
         <Button
             android:id="@+id/btn_fecafro"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="5dp"
             android:backgroundTint="#161616"
             android:text="FECAFRO"
             android:textColor="#FFFFFF"
-            android:background="@drawable/button_border"/>
+            android:background="@drawable/button_border" />
     </LinearLayout>
 
-    <!-- FECAP logo at the bottom -->
+    <!-- Logo da FECAP -->
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/fecap" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

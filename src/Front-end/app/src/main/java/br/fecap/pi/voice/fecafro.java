@@ -14,7 +14,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import br.fecap.pi.voice.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class fecafro extends AppCompatActivity {
@@ -56,20 +55,8 @@ public class fecafro extends AppCompatActivity {
 
     }
 
-
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int itemId = item.getItemId();
-        if (itemId == R.id.nav_home) {
-            startActivity(new Intent(fecafro.this, MainActivity.class));
-            return true;
-        } else if (itemId == R.id.nav_warning) {
-            startActivity(new Intent(fecafro.this, Complaint.class));
-            return true;
-        } else if (itemId == R.id.nav_image) {
-            startActivity(new Intent(fecafro.this, Notice.class));
-            return true;
-        } else {
-            return false;
-        }
+        return NavBar.handleNavigation(this, item);
     }
+
 }

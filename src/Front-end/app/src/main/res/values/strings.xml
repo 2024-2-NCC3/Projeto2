@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Voice</string>
     <string name="spinner_prompt">Spec</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

@@ -15,7 +15,6 @@
         android:layout_gravity="center"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:background="#161616"
         android:paddingTop="10dp"
         app:backgroundTint="#4B0272"
         app:itemHorizontalTranslationEnabled="false"

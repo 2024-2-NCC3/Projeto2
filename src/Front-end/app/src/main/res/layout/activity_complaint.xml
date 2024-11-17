@@ -4,102 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Cinza_Claro"
+    android:background="@color/Background"
     android:id="@+id/main"
     tools:context="br.fecap.pi.voice.Complaint">
 
-
+    <!-- Título -->
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Relatos e Denúncias"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
+        android:textSize="26sp"
+        android:textColor="#3E4A59"
+        android:fontFamily="sans-serif-medium"
         android:layout_marginTop="32dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-
+    <!-- Descrição -->
     <TextView
         android:id="@+id/descriptionTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="16dp"
         android:text="Estamos aqui para ouvir você. Relate seu caso de forma segura e anônima. Juntos, vamos direcioná-lo para o apoio que você merece."
-        android:textColor="@android:color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textColor="#616161"
+        android:padding="15dp"
+        android:textSize="16sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Spinner para especificação -->
     <Spinner
         android:id="@+id/specificationSpinner"
-        android:layout_width="361dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="16dp"
-        android:prompt="@string/spinner_prompt"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:layout_margin="15dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_border"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
 
+    <!-- Spinner para região -->
+    <Spinner
+        android:id="@+id/regionSpinner"
+        android:layout_width="0dp"
+        android:padding="10dp"
+        android:layout_margin="15dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/specificationSpinner" />
+
+    <!-- EditText para relato -->
     <EditText
         android:id="@+id/reportEditText"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/Cinza_Claro"
+        android:layout_marginTop="24dp"
         android:gravity="top"
         android:hint="Digite seu relato aqui"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:padding="16dp"
+        android:textColor="#333333"
+        app:layout_constraintTop_toBottomOf="@+id/regionSpinner"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/specificationSpinner" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Botão de envio -->
     <Button
         android:id="@+id/sendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@android:color/holo_green_dark"
+        android:background="@drawable/button_border"
         android:text="ENVIAR RELATO"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/reportEditText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reportEditText" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:layout_gravity="center"
-        android:paddingTop="10dp"
-        android:background="@color/Cinza_Claro"
+        android:background="@color/Background"
         app:itemIconTint="@color/Preto"
         app:itemTextColor="@color/Preto"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu"
-        app:itemHorizontalTranslationEnabled="false"
-        />
+        app:menu="@menu/bottom_navigation_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
