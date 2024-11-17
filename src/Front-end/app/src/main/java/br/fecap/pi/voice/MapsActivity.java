@@ -1,7 +1,6 @@
 package br.fecap.pi.voice;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,16 +20,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.maps.android.heatmaps.HeatmapTileProvider;
 import com.google.maps.android.heatmaps.WeightedLatLng;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.List;
 import br.fecap.pi.voice.databinding.ActivityMapsBinding;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
+    private TextView textView;
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
     private DataBaseManager dataBaseManager;
@@ -52,7 +47,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        // Inicializa o DataBaseManager
         dataBaseManager = new DataBaseManager(this);
         frequentedRegions();
 
@@ -74,7 +68,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private void addHeatmap() {
-        // Chama o método de fetch do DataBaseManager e define o callback para tratar os dados
+
         dataBaseManager.fetchHeatmapData(new DataBaseManager.DataCallback<List<WeightedLatLng>>() {
             @Override
             public void onSuccess(List<WeightedLatLng> heatmapData) {
@@ -95,24 +89,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
     }
 
-    private List<String> parseMostFrequentRegions(JSONArray response) {
-        List<String> regions = new ArrayList<>();
-
-
-        for (int i = 0; i < response.length(); i++) {
-            try {
-                JSONObject regionObj = response.getJSONObject(i);
-                if (regionObj.has("region")) {
-                    String region = regionObj.getString("region");
-                    regions.add(region);
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-        return regions;
-    }
-
     private void frequentedRegions() {
         dataBaseManager.fetchMostFrequentRegions(new DataBaseManager.DataCallback<List<String>>() {
             @Override
@@ -122,10 +98,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     TextView mostFrequent2 = findViewById(R.id.mostFrequent2);
                     TextView mostFrequent3 = findViewById(R.id.mostFrequent3);
 
-
-                    mostFrequent1.setText(regions.get(0));
-                    mostFrequent2.setText(regions.get(1));
-                    mostFrequent3.setText(regions.get(2));
+                    mostFrequent1.setText("Região 1: " + regions.get(0));
+                    mostFrequent2.setText("Região 2: " + regions.get(1));
+                    mostFrequent3.setText("Região 3: " + regions.get(2));
 
                     Log.d("frequentedRegions", "Regiões mais frequentes: " + regions);
                 } else {

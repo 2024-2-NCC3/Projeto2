@@ -49,11 +49,13 @@ public class Complaint extends AppCompatActivity {
         System.out.println(cesarCipher("hello world", 20));
 
         // Complaint type dropdown setup
+
         String[] complaintTypes = new String[]{"Racism", "Homophobia", "Sexual Abuse", "Others"};
         ArrayAdapter<String> complaintAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, complaintTypes);
         complaintTypeDropdown.setAdapter(complaintAdapter);
 
         // Region dropdown setup
+
         String[] regions = new String[]{
                 "Capital", "Grande São Paulo", "Litoral Norte", "Vale do Paraíba",
                 "Região de Campinas", "Sorocaba", "Região de Ribeirão Preto",
@@ -147,7 +149,6 @@ public class Complaint extends AppCompatActivity {
                 return params;
             }
         };
-
         queue.add(postRequest);
     }
 }

@@ -10,23 +10,18 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:paddingTop="10dp"
-        app:itemHorizontalTranslationEnabled="false"
         android:background="#161616"
+        app:itemHorizontalTranslationEnabled="false"
         app:itemIconTint="@color/Branco"
         app:itemTextColor="@color/Branco"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 
     <TextView
         android:id="@+id/txt_fecafro"
