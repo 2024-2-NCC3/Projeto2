@@ -45,25 +45,21 @@ public class Complaint extends AppCompatActivity {
         reportText = findViewById(R.id.reportEditText);
         sendButton = findViewById(R.id.sendButton);
 
-        System.out.println(cesarCipher("hello world", 20));
-
         // Complaint type dropdown setup
 
-        String[] complaintTypes = new String[]{"Racism", "Homophobia", "Sexual Abuse", "Others"};
+        String[] complaintTypes = new String[]{"Racismo", "Homofobia", "Abuso Sexual", "Outros"};
         ArrayAdapter<String> complaintAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, complaintTypes);
         complaintTypeDropdown.setAdapter(complaintAdapter);
 
         // Region dropdown setup
-
-        String[] regions = new String[]{
-                "Capital", "Grande São Paulo", "Litoral Norte", "Vale do Paraíba",
-                "Região de Campinas", "Sorocaba", "Região de Ribeirão Preto",
-                "São José do Rio Preto", "Presidente Prudente", "Terra do Sol Nascente",
-                "Tóquio", "Região de Bauru", "Vale do Ribeira", "Região de Marília",
-                "Baixada Santista", "Alto Tietê", "Região de Araçatuba", "Região de Franca"
-        };
-        ArrayAdapter<String> regionAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, regions);
-        regionDropdown.setAdapter(regionAdapter);
+        Spinner spinnerRegions = findViewById(R.id.regionSpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.regions,
+                android.R.layout.simple_spinner_item
+        );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerRegions.setAdapter(adapter);
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
