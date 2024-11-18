@@ -41,7 +41,7 @@
             android:value="AIzaSyCHUWjVBYhjl7PBz6vCaLXeNXowZGy3KbA" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".activity.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity

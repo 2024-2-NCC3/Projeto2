@@ -1,4 +1,4 @@
-package br.fecap.pi.voice;
+package br.fecap.pi.voice.activity;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -21,6 +21,9 @@ import com.google.maps.android.heatmaps.HeatmapTileProvider;
 import com.google.maps.android.heatmaps.WeightedLatLng;
 
 import java.util.List;
+
+import br.fecap.pi.voice.DataBaseManager;
+import br.fecap.pi.voice.R;
 import br.fecap.pi.voice.databinding.ActivityMapsBinding;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -49,15 +52,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         dataBaseManager = new DataBaseManager(this);
         frequentedRegions();
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
     }
-
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return NavBar.handleNavigation(this, item);
-    }
-
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
