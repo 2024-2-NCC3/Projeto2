@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.MenuItem;
 
+import br.fecap.pi.voice.activity.Complaint;
+import br.fecap.pi.voice.activity.MainActivity;
+
 public class NavBar {
     public static boolean handleNavigation(Context context, MenuItem item) {
         int itemId = item.getItemId();

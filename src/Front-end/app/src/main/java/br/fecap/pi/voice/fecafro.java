@@ -50,13 +50,6 @@ public class fecafro extends AppCompatActivity {
             return insets;
         });
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
-
-    }
-
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return NavBar.handleNavigation(this, item);
     }
 
 }

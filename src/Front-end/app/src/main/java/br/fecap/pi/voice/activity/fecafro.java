@@ -115,6 +115,7 @@ public class fecafro extends AppCompatActivity {
         fecafroButton.setOnClickListener(view -> {
             startActivity(new Intent(fecafro.this, ruth_cardoso.class));
         });
+
     }
 
     // Método para abrir o menu de botões com espaçamento ajustado
