@@ -1,4 +1,4 @@
-package br.fecap.pi.voice;
+package br.fecap.pi.voice.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,14 +10,13 @@ import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.splashscreen.SplashScreen;
 
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-
-
+import br.fecap.pi.voice.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,18 +24,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        EdgeToEdge.enable(this);
+        // Remover a ActionBar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide(); // Remove a ActionBar
+        }
+
         setContentView(R.layout.activity_main);
-        SplashScreen.installSplashScreen(this);
 
-
-
-        setContentView(R.layout.activity_main);
-
-
-        //Botões adicionados
-        Button denuncia = findViewById(R.id.button_warning);
-        denuncia.setOnClickListener(new View.OnClickListener() {
+        // CardView: Nova Denúncia
+        CardView cardNewReport = findViewById(R.id.card_new_report);
+        cardNewReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Complaint.class);
@@ -45,18 +42,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button fecafro = findViewById(R.id.btn_fecafro);
-        fecafro.setOnClickListener(new View.OnClickListener() {
+        // CardView: S.O.S CRPIR
+        CardView cardSosCrpir = findViewById(R.id.card_sos_crpir);
+        cardSosCrpir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, fecafro.class);
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=5511974318628"));
                 startActivity(intent);
-                finish();
             }
         });
 
-        Button ruthCardoso = findViewById(R.id.btn_ruth);
-        ruthCardoso.setOnClickListener(new View.OnClickListener() {
+        // CardView: Ruth Cardoso
+        CardView cardRuthCardoso = findViewById(R.id.card_ruth_cardoso);
+        cardRuthCardoso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -66,23 +64,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button crpir = findViewById(R.id.btn_crpir);
-        crpir.setOnClickListener(new View.OnClickListener() {
+        // CardView: FECAFRO
+        CardView cardFecafro = findViewById(R.id.card_fecafro);
+        cardFecafro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=5511974318628"));
+                Intent intent = new Intent(MainActivity.this, fecafro.class); // Certifique-se de que o nome da classe corresponde à sua activity
                 startActivity(intent);
+                finish();
             }
         });
 
-
+        // Ajuste de insets para as barras do sistema
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-
     }
-
 }

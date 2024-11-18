@@ -13,7 +13,8 @@
             />
         <item
             android:id="@+id/nav_warning"
-            android:icon="@drawable/megafone_icon"
+            android:icon="@drawable/megaphone"
+            android:tint="@color/Preto"
             android:title="Denuncia" />
 </menu>
 
