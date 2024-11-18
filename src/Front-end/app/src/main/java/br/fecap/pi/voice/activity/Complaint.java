@@ -31,17 +31,15 @@ import br.fecap.pi.voice.R;
 
 public class Complaint extends AppCompatActivity {
 
-    private Spinner dropdown;
+    private Spinner complaintTypeDropdown;
+    private Spinner regionDropdown;
     private EditText reportText;
     private Button sendButton;
     private Button mainButton, complaintButton, fecafroButton;
     private boolean isFabOpen = false;
 
-
     SimpleDateFormat sdf = new SimpleDateFormat("HH");
     private final String actuallyHour = sdf.format(new Date());
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,17 +47,28 @@ public class Complaint extends AppCompatActivity {
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide(); // Remove a ActionBar
-        }
 
             dropdown = findViewById(R.id.specificationSpinner);
+
+        complaintTypeDropdown = findViewById(R.id.specificationSpinner);
+        regionDropdown = findViewById(R.id.regionSpinner);
         reportText = findViewById(R.id.reportEditText);
         sendButton = findViewById(R.id.sendButton);
+        // Complaint type dropdown setup
 
-        System.out.println(cesarCipher("hello world", 20));
+        String[] complaintTypes = new String[]{"Racismo", "Homofobia", "Abuso Sexual", "Outros"};
+        ArrayAdapter<String> complaintAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, complaintTypes);
+        complaintTypeDropdown.setAdapter(complaintAdapter);
 
-        String[] items = new String[]{"Racismo", "Homofobia", "Abuso Sexual", "Outros"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);
+        // Region dropdown setup
+        Spinner spinnerRegions = findViewById(R.id.regionSpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.regions,
+                android.R.layout.simple_spinner_item
+        );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerRegions.setAdapter(adapter);
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,29 +138,21 @@ public class Complaint extends AppCompatActivity {
         StringBuilder encryptedText = new StringBuilder();
         OFFSET = OFFSET % 26;
 
-
-        // shouldn't fail but if it fails we're fucked
+        //Should work but if isn't work we´re fucked
         if (OFFSET == 0) {
             OFFSET = 1;
         }
 
         for (char c : text.toCharArray()) {
-
             if (Character.isLetter(c)) {
-
                 if (c >= 'A' && c <= 'Z') {
                     char newLetter = (char) ('A' + (c - 'A' + OFFSET + 26) % 26);
                     encryptedText.append(newLetter);
-                }
-
-                else if (c >= 'a' && c <= 'z') {
+                } else if (c >= 'a' && c <= 'z') {
                     char newLetter = (char) ('a' + (c - 'a' + OFFSET + 26) % 26);
                     encryptedText.append(newLetter);
-                }
-
-                else if (c >= 'À' && c <= 'ÿ') {
+                } else if (c >= 'À' && c <= 'ÿ') {
                     int newCharCode = c + OFFSET;
-
                     if (newCharCode > 'ÿ') {
                         newCharCode = 'À' + (newCharCode - 'ÿ' - 1);
                     }
@@ -162,17 +163,17 @@ public class Complaint extends AppCompatActivity {
             }
         }
 
-
         return encryptedText.toString();
     }
 
 
     private void sendComplaint() {
-        String type = dropdown.getSelectedItem().toString();
+        String type = complaintTypeDropdown.getSelectedItem().toString();
+        String region = regionDropdown.getSelectedItem().toString();
         String report = reportText.getText().toString();
-        System.out.println("passei aqui 1: " + type + " " + report);
+
         if (report.isEmpty()) {
-            Toast.makeText(this, "Preencha os campos vazios", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -183,35 +184,25 @@ public class Complaint extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(Complaint.this, "Enviado com sucesso", Toast.LENGTH_SHORT).show();
-
-                        System.out.println("passei aqui 3: " + response);
-
-                        System.out.println("funcionou");
-
+                        Toast.makeText(Complaint.this, "Complaint sent successfully", Toast.LENGTH_SHORT).show();
                         reportText.setText("");
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(Complaint.this, "Erro ao enviar", Toast.LENGTH_SHORT).show();
-
-                        System.out.println("passei aqui 2: " + error);
-
-                        System.out.println(error);
-
+                        Toast.makeText(Complaint.this, "Error sending complaint", Toast.LENGTH_SHORT).show();
                     }
                 }) {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("type", cesarCipher(type, Integer.parseInt(actuallyHour)));
+                params.put("region", region);
                 params.put("report", cesarCipher(report, Integer.parseInt(actuallyHour)));
                 return params;
             }
         };
-
         queue.add(postRequest);
     }
 }

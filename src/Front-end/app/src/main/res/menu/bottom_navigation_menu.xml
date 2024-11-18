@@ -3,23 +3,18 @@
 
         <item
             android:id="@+id/nav_image"
-            android:icon="@drawable/image"
-            android:title="Image"
-            android:tint="@color/Preto"
+            android:icon="@drawable/gps"
+            android:title="Mapa"
             />
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/homeicon"
             android:title="Home"
-            android:tint="@color/Preto"
             />
         <item
             android:id="@+id/nav_warning"
             android:icon="@drawable/megaphone"
             android:tint="@color/Preto"
             android:title="Denuncia" />
-
-
-
 </menu>
 

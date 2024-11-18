@@ -1,4 +1,48 @@
 <resources>
     <string name="app_name">Voice</string>
     <string name="spinner_prompt">Spec</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string-array name="regions">
+        <!-- Zona Central -->
+        <item>Centro</item>
+        <item>República</item>
+        <item>Sé</item>
+        <item>Brás</item>
+        <item>Bom Retiro</item>
+        <item>Liberdade</item>
+        <item>Bela Vista</item>
+
+        <!-- Zona Norte -->
+        <item>Casa Verde</item>
+        <item>Santana</item>
+        <item>Tucuruvi</item>
+        <item>Vila Maria</item>
+        <item>Vila Guilherme</item>
+        <item>Freguesia do Ó</item>
+
+        <!-- Zona Sul -->
+        <item>Vila Mariana</item>
+        <item>Jabaquara</item>
+        <item>Santo Amaro</item>
+        <item>Campo Limpo</item>
+        <item>Capão Redondo</item>
+        <item>Grajaú</item>
+        <item>Interlagos</item>
+
+        <!-- Zona Leste -->
+        <item>Mooca</item>
+        <item>Tatuapé</item>
+        <item>Vila Prudente</item>
+        <item>São Mateus</item>
+        <item>Itaquera</item>
+        <item>Penha</item>
+        <item>Ermelino Matarazzo</item>
+
+        <!-- Zona Oeste -->
+        <item>Pinheiros</item>
+        <item>Butantã</item>
+        <item>Lapa</item>
+        <item>Perdizes</item>
+        <item>Vila Leopoldina</item>
+    </string-array>
 </resources>
