@@ -1,6 +1,7 @@
 package br.fecap.pi.voice.activity;
 
 import android.content.Intent;
+import android.graphics.Region;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -33,6 +34,7 @@ public class Complaint extends AppCompatActivity {
     private Button sendButton;
     private Button mainButton, complaintButton, fecafroButton;
     private boolean isFabOpen = false;
+    private Spinner spinnerRegions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,15 @@ public class Complaint extends AppCompatActivity {
         complaintTypeDropdown.setAdapter(complaintAdapter);
 
         sendButton.setOnClickListener(v -> sendComplaint());
+
+        spinnerRegions = findViewById(R.id.regionSpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.regions,
+                android.R.layout.simple_spinner_item
+        );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerRegions.setAdapter(adapter);
 
         // Configurar o FloatingActionButton e os botões adicionais
         FloatingActionButton fab = findViewById(R.id.floating_button);
@@ -159,6 +170,7 @@ public class Complaint extends AppCompatActivity {
                 Map<String, String> params = new HashMap<>();
                 int currentHour = Integer.parseInt(new SimpleDateFormat("HH").format(new Date()));
                 params.put("type", cesarCipher(type, currentHour));
+                params.put("region", spinnerRegions.getSelectedItem().toString());
                 params.put("report", cesarCipher(report, currentHour));
                 return params;
             }
