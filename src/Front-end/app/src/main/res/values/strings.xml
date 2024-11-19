@@ -4,6 +4,7 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string-array name="regions">
         <!-- Zona Central -->
+        <item>Selecione a localidade</item>
         <item>Centro</item>
         <item>República</item>
         <item>Sé</item>

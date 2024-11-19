@@ -27,7 +27,7 @@ public class fecafro extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private List<Noticia> listaNoticia = new ArrayList<>();
-    private Button mainButton, complaintButton, fecafroButton;
+    private Button mainButton, complaintButton, mapButton;
     private boolean isFabOpen = false;
 
     @Override
@@ -87,12 +87,12 @@ public class fecafro extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.floating_button);
         mainButton = findViewById(R.id.main_button);
         complaintButton = findViewById(R.id.denuncia_button);
-        fecafroButton = findViewById(R.id.ruth_button);
+        mapButton = findViewById(R.id.map_button);
 
         // Ocultar os botões inicialmente
         mainButton.setVisibility(View.GONE);
         complaintButton.setVisibility(View.GONE);
-        fecafroButton.setVisibility(View.GONE);
+        mapButton.setVisibility(View.GONE);
 
         // Configurar o clique no FAB para mostrar/ocultar os botões
         fab.setOnClickListener(view -> {
@@ -112,8 +112,8 @@ public class fecafro extends AppCompatActivity {
             startActivity(new Intent(fecafro.this, Complaint.class));
         });
 
-        fecafroButton.setOnClickListener(view -> {
-            startActivity(new Intent(fecafro.this, ruth_cardoso.class));
+        mapButton.setOnClickListener(view -> {
+            startActivity(new Intent(fecafro.this, MapsActivity.class));
         });
 
     }
@@ -122,12 +122,12 @@ public class fecafro extends AppCompatActivity {
     private void openFabMenu() {
         mainButton.setVisibility(View.VISIBLE);
         complaintButton.setVisibility(View.VISIBLE);
-        fecafroButton.setVisibility(View.VISIBLE);
+        mapButton.setVisibility(View.VISIBLE);
 
         // Ajuste o espaçamento vertical dos botões
         mainButton.setTranslationY(-350f); // Distância maior
         complaintButton.setTranslationY(-250f); // Distância intermediária
-        fecafroButton.setTranslationY(-150f); // Distância menor
+        mapButton.setTranslationY(-150f); // Distância menor
 
         isFabOpen = true;
     }
@@ -136,7 +136,7 @@ public class fecafro extends AppCompatActivity {
     private void closeFabMenu() {
         mainButton.setVisibility(View.GONE);
         complaintButton.setVisibility(View.GONE);
-        fecafroButton.setVisibility(View.GONE);
+        mapButton.setVisibility(View.GONE);
         isFabOpen = false;
     }
 

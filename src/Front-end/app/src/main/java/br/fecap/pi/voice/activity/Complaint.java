@@ -1,7 +1,6 @@
 package br.fecap.pi.voice.activity;
 
 import android.content.Intent;
-import android.graphics.Region;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -32,7 +29,7 @@ public class Complaint extends AppCompatActivity {
     private Spinner complaintTypeDropdown;
     private EditText reportText;
     private Button sendButton;
-    private Button mainButton, complaintButton, fecafroButton;
+    private Button mainButton, complaintButton, mapButton;
     private boolean isFabOpen = false;
     private Spinner spinnerRegions;
 
@@ -50,7 +47,7 @@ public class Complaint extends AppCompatActivity {
         sendButton = findViewById(R.id.sendButton);
 
         // Complaint type dropdown setup
-        String[] complaintTypes = new String[]{"Racismo", "Homofobia", "Abuso Sexual", "Outros"};
+        String[] complaintTypes = new String[]{"Selecione o tipo de denúncia","Racismo", "Homofobia", "Abuso Sexual", "Outros"};
         ArrayAdapter<String> complaintAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, complaintTypes);
         complaintTypeDropdown.setAdapter(complaintAdapter);
 
@@ -69,12 +66,12 @@ public class Complaint extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.floating_button);
         mainButton = findViewById(R.id.main_button);
         complaintButton = findViewById(R.id.denuncia_button);
-        fecafroButton = findViewById(R.id.ruth_button);
+        mapButton = findViewById(R.id.map_button);
 
         // Ocultar os botões inicialmente
         mainButton.setVisibility(View.GONE);
         complaintButton.setVisibility(View.GONE);
-        fecafroButton.setVisibility(View.GONE);
+        mapButton.setVisibility(View.GONE);
 
         // Configurar o clique no FAB para mostrar/ocultar os botões
         fab.setOnClickListener(view -> {
@@ -88,19 +85,19 @@ public class Complaint extends AppCompatActivity {
         // Configurar os cliques nos botões para navegar para as atividades apropriadas
         mainButton.setOnClickListener(view -> startActivity(new Intent(Complaint.this, MainActivity.class)));
         complaintButton.setOnClickListener(view -> startActivity(new Intent(Complaint.this, Complaint.class)));
-        fecafroButton.setOnClickListener(view -> startActivity(new Intent(Complaint.this, ruth_cardoso.class)));
+        mapButton.setOnClickListener(view -> startActivity(new Intent(Complaint.this, MapsActivity.class)));
     }
 
     // Método para abrir o menu de botões com espaçamento ajustado
     private void openFabMenu() {
         mainButton.setVisibility(View.VISIBLE);
         complaintButton.setVisibility(View.VISIBLE);
-        fecafroButton.setVisibility(View.VISIBLE);
+        mapButton.setVisibility(View.VISIBLE);
 
         // Ajuste o espaçamento vertical dos botões
         mainButton.setTranslationY(-350f); // Distância maior
         complaintButton.setTranslationY(-250f); // Distância intermediária
-        fecafroButton.setTranslationY(-150f); // Distância menor
+        mapButton.setTranslationY(-150f); // Distância menor
 
         isFabOpen = true;
     }
@@ -109,7 +106,7 @@ public class Complaint extends AppCompatActivity {
     private void closeFabMenu() {
         mainButton.setVisibility(View.GONE);
         complaintButton.setVisibility(View.GONE);
-        fecafroButton.setVisibility(View.GONE);
+        mapButton.setVisibility(View.GONE);
         isFabOpen = false;
     }
 

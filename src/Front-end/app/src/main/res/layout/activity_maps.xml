@@ -12,7 +12,7 @@
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="450dp"
         android:layout_alignParentTop="true"
         tools:context="br.fecap.pi.voice.activity.MapsActivity" />
 
@@ -59,22 +59,17 @@
         android:layout_centerHorizontal="true"
         android:textSize="16sp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_button"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_below="@id/mostFrequent3"
-        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="3dp"
-        android:background="@color/Cinza_Claro"
-        android:paddingTop="10dp"
-        app:itemIconTint="@color/Preto"
-        app:itemTextColor="@color/Preto"
-        app:menu="@menu/bottom_navigation_menu" />
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="28dp"
+        android:src="@drawable/home_alt_icon" /> <!-- Use um ícone apropriado -->
+
 
 </RelativeLayout>
