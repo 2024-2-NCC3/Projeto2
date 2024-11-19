@@ -6,9 +6,9 @@
 
 # Projeto Voice<p align="center">
 
-<div>
-    <img src="Documentos\Entrega 3\Imagens\Logo_Icon\icone_app.jpeg" width="128" height="128"/>
-</div>
+<p align="center">
+    <a href= "[https://www.fecap.br/](https://github.com/2024-2-NCC3/Projeto2)"><img src="Imagens/Logo_Icon/logo_app.png" width="200" height="400"/>
+</p>
 
 
 
@@ -22,10 +22,10 @@
 
 A violência contra mulheres,  e as violências ético-raciais, é um problema alarmante que precisa ser abordado. A importância da denúncia e a visibilidade dessas questões sociais são fundamentais para promover mudanças significativas.
 
-Objetivo do App
+### Objetivo do App
 O aplicativo tem como objetivo criar um espaço seguro para denúncias, facilitar o acesso à informação e suporte, e promover a conscientização sobre questões ético-raciais.
 
-Funcionalidades do App
+### Funcionalidades do App
 - Página de Denúncias
   - Formulário anônimo para envio de denúncias, com um link direcionando para o CRPIR (Centro de Referência de Promoção da Igualdade Racial).
   - Opção de selecionar o tipo de violência ou discriminação enfrentada.
@@ -33,18 +33,36 @@ Funcionalidades do App
 - Portal Informativo
   - Artigos e materiais educativos sobre questões étnico-raciais e a violência contra mulheres, visando aumentar a conscientização e o entendimento.
 
-Parcerias e Apoio
+### Parcerias e Apoio
 O app contará com a colaboração de coletivos como Fecafro e Ruth Cardoso, fortalecendo a rede de apoio e amplificando a eficácia das iniciativas propostas.
 
- main
-- [Figma](https://www.figma.com/design/6ulN34TlcZpjF9bQde2QxN/Untitled?node-id=0-1&t=SfLDRvDMNlrHqicn-1).
-- 
+
 ## Referências
 Uma das principais referências para o nosso projeto foi o **Centro de Referência de Promoção da Igualdade Racial (CRPIR)**, que desempenha um papel fundamental no acolhimento e na defesa das vítimas de violências étnico-raciais, além de promover ativamente a igualdade racial. Também buscamos inspiração nos coletivos **Fecafro** e **Ruth Cardoso**, que realizam esse trabalho de acolhimento dentro da faculdade. Nosso aplicativo foi desenvolvido com o intuito de ser uma ferramenta facilitadora para as vítimas, permitindo que elas façam denúncias de forma prática e segura.
 
 Para entender melhor o impacto desse tipo de violência na vida das vítimas, assistimos a vídeos que mostravam relatos reais e abordavam as consequências emocionais e sociais. Esses materiais foram essenciais para aprofundarmos nossa compreensão sobre a importância de fornecer um suporte adequado e acessível, que é o objetivo central do nosso app.
 
+## 🛠 Estrutura de pastas
+
+-Raiz  
+|  
+|-->documentos  
+ |-->Entrega 1  
+ |-->Entrega 2  
+ |-->Entrega 3  
+ |-->Entrega 4  
+|-->executáveis  
+ |-->android   
+|-->imagens  
+|-->src  
+ |-->Backend  
+ |-->Frontend  
+|readme.md  
+
 📋 Licença/License
+
+<p xmlns:cc="http://creativecommons.org/ns#" >Este trabalho está licenciado sob <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="altura:22px!importante;margem-esquerda:3px;alinhamento-vertical:texto-inferior;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="altura:22px!importante;margem-esquerda:3px;alinhamento-vertical:texto-inferior;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+
 🎓 Referências
 Aqui estão as referências usadas no projeto.
 - https://capital.sp.gov.br/web/direitos_humanos/w/igualdade_racial/rede_de_atendimento/270197
