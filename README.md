@@ -7,7 +7,7 @@
 # Projeto Voice<p align="center">
 
 <p align="center">
-    <a href= "[https://www.fecap.br/](https://github.com/2024-2-NCC3/Projeto2)"><img src="Imagens/Logo_Icon/logo_app.png" width="100" height="400"/>
+    <a href= "[https://www.fecap.br/](https://github.com/2024-2-NCC3/Projeto2)"><img src="Imagens/Logo_Icon/logo_app.png" width="200" height="400"/>
 </p>
 
 
