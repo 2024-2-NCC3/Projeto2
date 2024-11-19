@@ -3,10 +3,14 @@ package br.fecap.pi.voice.activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
 import android.view.View;
+
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
+
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import br.fecap.pi.voice.R;
@@ -35,6 +39,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // CardView: Mapa
+        CardView cardMap = findViewById(R.id.card_map);
+        cardMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         // CardView: S.O.S CRPIR
         CardView cardSosCrpir = findViewById(R.id.card_sos_crpir);
         cardSosCrpir.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
         cardRuthCardoso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ruth_cardoso.class); // Certifique-se de que o nome da classe corresponde à sua activity
+
+                Intent intent = new Intent(MainActivity.this, ruth_cardoso.class);
                 startActivity(intent);
                 finish();
             }

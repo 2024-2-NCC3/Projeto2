@@ -3,11 +3,9 @@ package br.fecap.pi.voice.activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -28,7 +26,7 @@ public class ruth_cardoso extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private List<Noticia> listaNoticia = new ArrayList<>();
-    private Button mainButton, complaintButton, fecafroButton;
+    private Button mainButton, complaintButton, mapButton;
     private boolean isFabOpen = false;
 
     @Override
@@ -81,12 +79,12 @@ public class ruth_cardoso extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.floating_button);
         mainButton = findViewById(R.id.main_button);
         complaintButton = findViewById(R.id.complaint_button);
-        fecafroButton = findViewById(R.id.fecafro_button);
+        mapButton = findViewById(R.id.map_button);
 
         // Ocultar os botões inicialmente
         mainButton.setVisibility(View.GONE);
         complaintButton.setVisibility(View.GONE);
-        fecafroButton.setVisibility(View.GONE);
+        mapButton.setVisibility(View.GONE);
 
         // Configurar o clique no FAB para mostrar/ocultar os botões
         fab.setOnClickListener(view -> {
@@ -106,8 +104,8 @@ public class ruth_cardoso extends AppCompatActivity {
             startActivity(new Intent(ruth_cardoso.this, Complaint.class));
         });
 
-        fecafroButton.setOnClickListener(view -> {
-            startActivity(new Intent(ruth_cardoso.this, fecafro.class));
+        mapButton.setOnClickListener(view -> {
+            startActivity(new Intent(ruth_cardoso.this, MapsActivity.class));
         });
     }
 
@@ -115,12 +113,12 @@ public class ruth_cardoso extends AppCompatActivity {
     private void openFabMenu() {
         mainButton.setVisibility(View.VISIBLE);
         complaintButton.setVisibility(View.VISIBLE);
-        fecafroButton.setVisibility(View.VISIBLE);
+        mapButton.setVisibility(View.VISIBLE);
 
         // Ajuste o espaçamento vertical dos botões
         mainButton.setTranslationY(-350f); // Distância maior
         complaintButton.setTranslationY(-250f); // Distância intermediária
-        fecafroButton.setTranslationY(-150f); // Distância menor
+        mapButton.setTranslationY(-150f); // Distância menor
 
         isFabOpen = true;
     }
@@ -129,7 +127,7 @@ public class ruth_cardoso extends AppCompatActivity {
     private void closeFabMenu() {
         mainButton.setVisibility(View.GONE);
         complaintButton.setVisibility(View.GONE);
-        fecafroButton.setVisibility(View.GONE);
+        mapButton.setVisibility(View.GONE);
         isFabOpen = false;
     }
 

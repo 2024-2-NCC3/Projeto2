@@ -2,12 +2,13 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <!-- Gradiente com verde claro e branco -->
+    <!-- Gradiente com azul acinzentado e branco -->
     <gradient
-        android:startColor="#A8E6CE"
-        android:endColor="@color/Branco"
         android:angle="90"
-        ></gradient>
+        android:startColor="#3E4A59"
+        android:endColor="#F3F3F3"
+
+        />
 
     <!-- Arredondamento das bordas -->
     <corners android:radius="25dp" />
@@ -15,6 +16,6 @@
     <!-- Borda fina e sutil -->
     <stroke
         android:width="2dp"
-        android:color="#4B4B4B" /> <!-- Cinza escuro -->
+        android:color="#8D8D8D" /> <!-- Cinza médio -->
 
 </shape>

@@ -61,14 +61,34 @@
                     android:layout_height="1dp"
                     android:layout_weight="1" />
             </LinearLayout>
+
             <TextView
                 android:id="@+id/txt_descricao"
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:paddingTop="20dp"
+                android:paddingHorizontal="10dp"
                 android:text="O Coletivo Ruth Cardoso é um grupo de pesquisa e ação social que se dedica a discutir e promover a justiça social e a cidadania. Com uma abordagem interdisciplinar, o coletivo busca unir acadêmicos, ativistas e a comunidade para abordar questões como desigualdade, direitos humanos e políticas públicas. O nome homenageia Ruth Cardoso, uma importante antropóloga e primeira-dama do Brasil, reconhecida por seu trabalho em inclusão social e desenvolvimento sustentável. O coletivo realiza eventos, oficinas e projetos que visam empoderar grupos marginalizados e fomentar uma sociedade mais equitativa."
                 android:textColor="#FFFFFF"
                 android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.833" />
+
+            <TextView
+                android:id="@+id/txt_postagem"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingHorizontal="10dp"
+                android:text="POSTAGENS: "
+                android:textColor="#FFFFFF"
+                android:textSize="30dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.483"
@@ -79,7 +99,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/newsRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:padding="20dp"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
@@ -98,7 +119,11 @@
         android:id="@+id/main_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#008476"
         android:text="Home"
+        android:textColor="@color/Branco"
+        android:textStyle="bold"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="120dp"
@@ -108,23 +133,28 @@
         android:id="@+id/complaint_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#008476"
         android:text="Denúncia"
+        android:textColor="@color/Branco"
+        android:textStyle="bold"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="80dp"
         android:visibility="gone" />
 
     <Button
-        android:id="@+id/fecafro_button"
+        android:id="@+id/map_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/Preto"
-        android:text="Fecafro"
-        android:textColor="@color/Branco"
-        android:textStyle="bold"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="40dp"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#008476"
+        android:text="Mapa"
+        android:textColor="@color/Branco"
+        android:textStyle="bold"
         android:visibility="gone" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
