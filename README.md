@@ -47,14 +47,13 @@ Para entender melhor o impacto desse tipo de violência na vida das vítimas, as
 -Raiz  
 |  
 |-->documentos  
-    |-->Entrega 1  
-    |-->Entrega 2  
-    |-->Entrega 3  
-    |-->Entrega 4  
-|-->executáveis 
-    |-->APK e AAB - Entrega 3  
-    |-->APK e AAB - Entrega 4 
- |-->android   
+ |-->Entrega 1  
+ |-->Entrega 2  
+ |-->Entrega 3  
+ |-->Entrega 4  
+|-->executáveis  
+ |-->APK e AAB - Entrega 3  
+ |-->APK e AAB - Entrega 4    
 |-->imagens  
 |-->src  
  |-->Backend  
